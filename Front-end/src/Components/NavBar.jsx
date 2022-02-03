@@ -1,12 +1,22 @@
 import React from "react";
 import SignUpForm from "./SignUpForm";
+import ImageSlider from "./ImageSlider";
+import {SliderData} from "./SliderData"
+import About from "./About"
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       searchKeyWord: "",
       wantsToLog: false,
+      view : "main"
     };
+  }
+  handleAbout = () => {
+    
+    this.setState({
+      view : "about"
+    })
   }
   handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,8 +29,21 @@ class Navbar extends React.Component {
       wantsToLog: true,
     });
   };
+  handleMainFromAbout = () => {
+    this.setState({
+      view : "main"
+    })
+  }
   render() {
-    if (!this.state.wantsToLog) {
+     if (this.state.view==="about") {
+      return (
+        <div>
+          <About/>
+          <button onClick={this.handleMainFromAbout} >Go Back To Main Page</button>
+        </div>
+      )
+    }
+    else if (!this.state.wantsToLog  ) {
       return (
         <div>
           <nav className="navbar navbar-light bg-light">
@@ -40,6 +63,9 @@ class Navbar extends React.Component {
               >
                 Products
               </button>
+              <button onClick={this.handleAbout} className="btn btn-outline-success" type="submit">
+                  About
+                </button>
               <form className="d-flex">
                 <input
                   name="searchKeyWord"
@@ -53,9 +79,11 @@ class Navbar extends React.Component {
                 <button className="btn btn-outline-success" type="submit">
                   Search
                 </button>
+                
               </form>
             </div>
           </nav>
+          <ImageSlider slides={SliderData} />
         </div>
       );
     } else if (this.state.wantsToLog) {
@@ -78,6 +106,9 @@ class Navbar extends React.Component {
             >
               Products
             </button>
+            <button onClick={this.handleAbout} className="btn btn-outline-success" type="submit">
+                  About
+                </button>
             <form className="d-flex">
               <input
                 name="searchKeyWord"
@@ -91,6 +122,7 @@ class Navbar extends React.Component {
               <button className="btn btn-outline-success" type="submit">
                 Search
               </button>
+             
             </form>
           </div>
         </nav>
@@ -99,6 +131,7 @@ class Navbar extends React.Component {
       )
    
     }
+  
     return null;
   }
 }

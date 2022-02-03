@@ -50,7 +50,7 @@ export default class SignUpForm extends Component {
     }
     render() {
         return (
-
+                <div className="signup" >
             <form>
                 <div style={{marginBottom:"10px"}} >
 
@@ -70,6 +70,7 @@ export default class SignUpForm extends Component {
                     marginTop : "2px"
                 }} onClick={this.handleSubmit} >Sign In</button>
             </form>
+            </div>
         )
     }
 }
