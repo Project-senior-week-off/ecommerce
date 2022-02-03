@@ -1,11 +1,24 @@
+import React from 'react';
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
+import NavBar from "./Components/NavBar"
+class App extends React.Component {
+  state={
+    view : "main",
+  };
+  handleView = e => {
+    this.setState({
       
-    </div>
-  );
+    })
+  }
+  render(){
+    return (
+      <div className="App">
+        <NavBar handleView={this.handleView}  />
+
+      </div>
+    );
+
+  }
 }
 
 export default App;
