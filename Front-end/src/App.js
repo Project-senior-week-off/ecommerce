@@ -18,7 +18,7 @@ class App extends React.Component {
         <NavBar handleView={this.handleView}  />
        
         <Footer/>
-       {/* { <About/>} */}
+      
       </div>
     );
 
