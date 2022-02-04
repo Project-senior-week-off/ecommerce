@@ -5,6 +5,7 @@ import NavBar from "./Components/NavBar"
 import SignUpForm from './Components/SignUpForm';
 import ImageSlider from './Components/ImageSlider';
 import { SliderData } from './Components/SliderData';
+import About from './Components/About';
 class App extends React.Component {
   state={
     view : "main",
@@ -15,8 +16,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <NavBar handleView={this.handleView}  />
-       <ImageSlider slides={SliderData} />
+       
         <Footer/>
+       {/* { <About/>} */}
       </div>
     );
 
