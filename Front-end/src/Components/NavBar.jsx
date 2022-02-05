@@ -37,14 +37,14 @@ class Navbar extends React.Component {
     })
   }
   render() {
- if(this.state.view=="data"){ 
+ if(this.state.view==="data"){ 
 
 return (
 
   <div>
   <nav className="navbar navbar-light bg-light">
    <div className="container-fluid">
-     <p className="navbar-brand">Premium</p>
+     <p className="navbar-brand">Game Geeks</p>
      <button
        onClick={this.handleLog}
        className="btn btn-outline-success"
@@ -52,7 +52,11 @@ return (
      >
        Sign In
      </button>
-     <button
+
+     <button onClick={this.handleAbout} className="btn btn-outline-success" type="submit">
+         About
+       </button>
+       <button
        onClick={()=> {
             this.setState({
 view : "data"
@@ -63,9 +67,6 @@ view : "data"
      >
        Products
      </button>
-     <button onClick={this.handleAbout} className="btn btn-outline-success" type="submit">
-         About
-       </button>
      <form className="d-flex">
        <input
          name="searchKeyWord"
@@ -91,7 +92,7 @@ view : "data"
         <div>
            <nav className="navbar navbar-light bg-light">
             <div className="container-fluid">
-              <p className="navbar-brand">Premium</p>
+              <p className="navbar-brand">Game Geeks</p>
               <button
                 onClick={this.handleLog}
                 className="btn btn-outline-success"
@@ -110,6 +111,7 @@ view : "data"
               >
                 Products
               </button>
+ 
               <button onClick={this.handleAbout} className="btn btn-outline-success" type="submit">
                   About
                 </button>
@@ -140,7 +142,7 @@ view : "data"
          <div>
           <nav className="navbar navbar-light bg-light">
             <div className="container-fluid">
-              <p className="navbar-brand">Premium</p>
+              <p className="navbar-brand">Game Geeks</p>
               <button
                 onClick={this.handleLog}
                 className="btn btn-outline-success"
@@ -186,7 +188,7 @@ view : "data"
         <div>
           <nav className="navbar navbar-light bg-light">
             <div className="container-fluid">
-              <p className="navbar-brand">Premium</p>
+              <p className="navbar-brand">Game Geeks</p>
               <button
                 onClick={this.handleLog}
                 className="btn btn-outline-success"
@@ -229,7 +231,7 @@ view : "data"
         <div>
         <nav className="navbar navbar-light bg-light">
           <div className="container-fluid">
-            <p className="navbar-brand">Premium</p>
+            <p className="navbar-brand">Game Geeks</p>
             <button
               onClick={this.handleLog}
               className="btn btn-outline-success"

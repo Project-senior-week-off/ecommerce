@@ -19,7 +19,7 @@ class App extends React.Component {
         
         <NavBar handleView={this.handleView}  />
        
-       <Product/>
+      {/* { <Product/>} */}
         <Footer/>
       
       </div>

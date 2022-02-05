@@ -28,6 +28,7 @@ export default class Product extends React.Component {
                             <img src={prodcut.pic} alt=""/>
                             <p>{prodcut.price}</p>
                             <p>{prodcut.descr}</p>
+                            <button>Find out more</button>
 
                         </div>
                     )
