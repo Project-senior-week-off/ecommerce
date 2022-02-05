@@ -2,7 +2,7 @@ import React from "react";
 import SignUpForm from "./SignUpForm";
 import ImageSlider from "./ImageSlider";
 import {SliderData} from "./SliderData"
-
+import Product from "./Product.js";
 import About from "./About"
 class Navbar extends React.Component {
   constructor(props) {
@@ -37,6 +37,55 @@ class Navbar extends React.Component {
     })
   }
   render() {
+ if(this.state.view=="data"){ 
+
+return (
+
+  <div>
+  <nav className="navbar navbar-light bg-light">
+   <div className="container-fluid">
+     <p className="navbar-brand">Premium</p>
+     <button
+       onClick={this.handleLog}
+       className="btn btn-outline-success"
+       type="submit"
+     >
+       Sign In
+     </button>
+     <button
+       onClick={()=> {
+            this.setState({
+view : "data"
+            })
+       }}
+       className="btn btn-outline-success"
+       type="submit"
+     >
+       Products
+     </button>
+     <button onClick={this.handleAbout} className="btn btn-outline-success" type="submit">
+         About
+       </button>
+     <form className="d-flex">
+       <input
+         name="searchKeyWord"
+         value={this.state.searchKeyWord}
+         onChange={this.handleChange}
+         className="form-control me-2"
+         type="search"
+         placeholder="Search"
+         aria-label="Search"
+       />
+       <button className="btn btn-outline-success" type="submit">
+         Search
+       </button>
+     </form>
+   </div>
+ </nav>
+<Product/> 
+</div>
+)
+ }
     if(this.state.view==="main") {
       return (
         <div>
@@ -51,7 +100,11 @@ class Navbar extends React.Component {
                 Sign In
               </button>
               <button
-                onClick={this.props.handleProduct}
+                onClick={()=> {
+                     this.setState({
+ view : "data"
+                     })
+                }}
                 className="btn btn-outline-success"
                 type="submit"
               >
