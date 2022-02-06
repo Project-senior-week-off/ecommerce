@@ -27,8 +27,10 @@ const ImageSlider  = ({slides}) =>{
             return (
                     <div className={index===current ? "slide active" : "slide" } key={index} >
                         {index===current && (
+                            <div>
                             <img className="image"  src={slide.image} alt="" />
-
+                            <h1 style={{color:"white",position:"absolute",top:"8px",left:'16px'}} >Special Prices <hr/> <p>save up to 30%</p> </h1>
+                            </div>
                         )}
 
                     </div>

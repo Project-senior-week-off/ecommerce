@@ -7,7 +7,7 @@ export default class Product extends React.Component {
         };
     }
     componentDidMount() {
-    fetch('localhost/data')
+    fetch('http://localhost:8000/api/data')
     .then(response=>response.json())
     .then(
         data => {
@@ -16,9 +16,8 @@ export default class Product extends React.Component {
             })
         }
     )
-    
+    console.log(this.state.data)
     }
-
     render() {
         return (
             <div>
@@ -28,7 +27,8 @@ export default class Product extends React.Component {
                             <p>{prodcut.name}</p>
                             <img src={prodcut.pic} alt=""/>
                             <p>{prodcut.price}</p>
-                            <p>{prodcut.desc}</p>
+                            <p>{prodcut.descr}</p>
+                            <button>Find out more</button>
 
                         </div>
                     )

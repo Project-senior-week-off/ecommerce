@@ -7,7 +7,7 @@ const { db } = require("./Database/index.js")
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false })); 
 app.use(bodyParser.json());
-app.get("/" , (req,res)=> {
+app.get("/api/data" , (req,res)=> {
 // pic,name,descr,price
 query.GetAlldata(function(rez){
 if(rez==null)
@@ -17,7 +17,7 @@ res.send(rez)
 })
 })
 // post request  ; 
-app.post("/post/data" , (req,res)=> { 
+app.post("/api/post/data" , (req,res)=> { 
     console.log(req.body)
     query.PostData(req.body , function(rez) { 
   if(rez==null)
